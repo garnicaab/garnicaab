@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fyodor & Coralines - Nuestra Boda</title>
+    <title>Mauricio & Fabiola - Nuestra Boda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,16 +14,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
       :root {
-        --sage: #7a8f7a;
-        --sage-dark: #4a5d4a;
-        --sage-light: #c8d3c4;
-        --cream: #f5f1e8;
-        --gold: #c9a96e;
-        --gold-dark: #a8884a;
-        --forest: #2d3e2d;
-        --text: #3a3a3a;
+        --sage: #18345b;
+        --sage-dark: #102746;
+        --sage-light: #e8edf5;
+        --cream: #f7f5ef;
+        --gold: #c9a45c;
+        --gold-dark: #9f7935;
+        --forest: #0b1d35;
+        --text: #263247;
       }
 
       * {
@@ -96,8 +97,12 @@
       .hero {
         min-height: 100vh;
         background:
-          linear-gradient(rgba(45, 62, 45, 0.4), rgba(45, 62, 45, 0.5)),
-          url("Imagenes/frente.png") center/cover;
+          radial-gradient(
+            ellipse at 50% 42%,
+            rgba(36, 66, 108, 0.72),
+            transparent 52%
+          ),
+          linear-gradient(135deg, #07172b 0%, #102746 52%, #18345b 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -298,65 +303,6 @@
         color: var(--sage-dark);
         font-size: 0.75rem;
         margin-top: 8px;
-      }
-
-      /* ===================== COUPLE ===================== */
-      .couple-grid {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        gap: 40px;
-        align-items: center;
-      }
-      .couple-card {
-        text-align: center;
-      }
-      .couple-card img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 6px solid #fff;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        margin-bottom: 20px;
-        transition: transform 0.5s;
-      }
-      .couple-card img:hover {
-        transform: scale(1.05) rotate(2deg);
-      }
-      .couple-card h3 {
-        font-family: "Great Vibes", cursive;
-        font-size: 2.5rem;
-        color: var(--forest);
-        margin-bottom: 10px;
-      }
-      .couple-card .surname {
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: var(--sage-dark);
-        margin-bottom: 20px;
-      }
-      .couple-card p {
-        font-size: 1.4rem;
-        line-height: 1.7;
-        max-width: 380px;
-        margin: 0 auto;
-        font-style: italic;
-      }
-      .heart-between {
-        font-size: 4rem;
-        color: var(--gold);
-        animation: heartBeat 2s infinite;
-      }
-      @keyframes heartBeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.2);
-        }
       }
 
       /* ===================== STORY TIMELINE ===================== */
@@ -604,8 +550,12 @@
         place-items: center;
         text-align: center;
         background:
-          linear-gradient(rgba(48, 72, 59, 0.72), rgba(48, 72, 59, 0.72)),
-          url("Imagenes/juntos.png") center/cover fixed;
+          radial-gradient(
+            ellipse at center,
+            rgba(31, 57, 91, 0.8),
+            transparent 65%
+          ),
+          linear-gradient(135deg, #07172b, #102746 55%, #0b1d35);
         color: white;
         position: relative;
       }
@@ -688,202 +638,318 @@
       .dress-list b {
         color: var(--forest);
       }
+
+      .dressed-reserved {
+        margin-right: 8px;
+        color: #998e37;
+        font-size: 1.5rem;
+      }
       /* ===================== RSVP ===================== */
-      .rsvp-section {
+      /* SECCIÓN PRINCIPAL */
+      .page {
+        text-align: center;
+        color: #fff;
         background: linear-gradient(
           135deg,
           var(--sage-dark) 0%,
           var(--forest) 100%
         );
-        color: #fff;
-        text-align: center;
+        padding: 55px 20px;
       }
-      .rsvp-section .section-title small {
-        color: var(--sage-light);
+
+      /* TÍTULO PRINCIPAL */
+      .page h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 15px 0 25px;
+        color: #fff !important;
       }
-      .rsvp-section .section-title h2 {
-        color: #fff;
+      .page h2 {
+        color: #fff !important;
       }
-      .rsvp-section .section-title .divider {
-        background: var(--gold);
-      }
-      .rsvp-intro {
-        max-width: 600px;
-        margin: 0 auto 40px;
-        font-size: 1.2rem;
+
+      /* TEXTO DESCRIPTIVO */
+      .page p {
+        max-width: 750px;
+        margin: 0 auto 35px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
         line-height: 1.7;
-        opacity: 0.95;
+        color: #fff;
       }
-      .rsvp-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
+
+      /* TEXTO PEQUEÑO SUPERIOR, SI EXISTE */
+      .page small {
+        color: var(--gold);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 6px;
       }
-      .rsvp-btn {
-        padding: 15px 40px;
+
+      /* BOTÓN COMPLETAR FORMULARIO */
+      .open-form {
         border: 2px solid var(--gold);
+        border-radius: 50px;
+        padding: 15px 40px;
         background: transparent;
         color: #fff;
+        cursor: pointer;
         font-family: "Montserrat", sans-serif;
         font-size: 1rem;
+        font-weight: 400;
         letter-spacing: 2px;
         text-transform: uppercase;
-        cursor: pointer;
-        border-radius: 50px;
-        transition: all 0.4s;
-        min-width: 200px;
+        transition: all 0.4s ease;
       }
-      .rsvp-btn.primary {
+
+      .open-form:hover {
         background: var(--gold);
         color: var(--forest);
-      }
-      .rsvp-btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(201, 169, 110, 0.4);
       }
-      .rsvp-btn.secondary:hover {
-        background: var(--gold);
-        color: var(--forest);
+
+      /* FONDO DEL MODAL */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(11, 29, 53, 0.85);
+        backdrop-filter: blur(8px);
       }
 
-      .rsvp-form {
-        max-width: 600px;
-        margin: 50px auto 0;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: left;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition:
-          max-height 0.8s ease,
-          opacity 0.5s ease,
-          padding 0.5s ease,
-          margin 0.5s ease;
-        padding-top: 0;
-        padding-bottom: 0;
+      .modal-overlay.is-visible {
+        display: flex;
       }
-      .rsvp-form.open {
-        max-height: 1000px;
-        opacity: 1;
-        padding: 40px;
-        margin-top: 50px;
+
+      /* FORMULARIO */
+      .form {
+        position: relative;
+        width: min(100%, 360px);
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 28px 20px 24px;
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--sage-dark) 0%,
+          var(--forest) 100%
+        );
+        border: 1px solid rgba(201, 164, 92, 0.6);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
       }
-      .rsvp-form h3 {
-        font-family: "Great Vibes", cursive;
-        font-size: 2rem;
+
+      /* BOTÓN CERRAR */
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        border: 0;
+        background: transparent;
+        color: var(--champagne-light);
+        cursor: pointer;
+        font-size: 2.5rem;
+        line-height: 1;
+        transition: color 0.3s;
+      }
+
+      .close-modal:hover {
         color: var(--gold);
-        margin-bottom: 25px;
+      }
+
+      /* TÍTULO DEL MODAL */
+      .title {
+        color: var(--champagne-light);
+        font-family: "Great Vibes", cursive;
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-top: 12px;
         text-align: center;
       }
-      .form-group {
-        margin-bottom: 20px;
+      .radios {
+        color: #fff !important;
+        font-size: 1.2rem !important;
       }
-      .form-group label {
-        display: block;
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 8px;
+
+      /* SUBTÍTULO DEL MODAL */
+      .subtitle {
         color: var(--sage-light);
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 10px;
+        text-align: center;
       }
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
+
+      /* CAMPOS DEL FORMULARIO */
+      .input-container {
+        height: 50px;
+        position: relative;
         width: 100%;
-        padding: 12px 15px;
+      }
+
+      .ic1 {
+        margin-top: 40px;
+      }
+
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .input {
         background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(201, 164, 92, 0.35);
         color: #fff;
         font-family: "Cormorant Garamond", serif;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
         transition: all 0.3s;
       }
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        outline: none;
+
+      .input:focus {
         border-color: var(--gold);
         background: rgba(255, 255, 255, 0.15);
       }
-      .form-group select option {
-        background: var(--forest);
-      }
-      .radio-group {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .radio-option {
-        flex: 1;
-        min-width: 140px;
-        position: relative;
-      }
-      .radio-option input {
+
+      .cut {
+        background: var(--sage-dark);
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
         position: absolute;
-        opacity: 0;
-      }
-      .radio-option label {
-        display: block;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-transform: none;
-        letter-spacing: 0;
-      }
-      .radio-option input:checked + label {
-        background: var(--gold);
-        color: var(--forest);
-        border-color: var(--gold);
-      }
-      .submit-btn {
-        width: 100%;
-        padding: 15px;
-        background: var(--gold);
-        color: var(--forest);
-        border: none;
-        border-radius: 50px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 1rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-weight: 500;
-        margin-top: 10px;
-      }
-      .submit-btn:hover {
-        background: #fff;
-        transform: translateY(-2px);
-      }
-      .form-message {
-        text-align: center;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 15px;
-        display: none;
-      }
-      .form-message.success {
-        background: rgba(124, 179, 66, 0.2);
-        border: 1px solid #7cb342;
-        color: #c5e1a5;
-        display: block;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
       }
 
+      .cut-short {
+        width: 80px;
+      }
+
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+
+      .placeholder {
+        color: rgba(255, 255, 255, 0.65);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.85rem;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition:
+          transform 200ms,
+          color 200ms;
+        top: 20px;
+      }
+      #acompanantes {
+        padding-top: 0;
+        color: #fff;
+      }
+
+      #acompanantes option {
+        background: var(--forest);
+        color: #fff;
+      }
+
+      #acompanantes:valid ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+
+      .input:focus ~ .placeholder {
+        color: var(--champagne-light);
+      }
+
+      /* BOTÓN ENVIAR */
+      .submit {
+        background: var(--gold);
+        border-radius: 50px;
+        border: 2px solid var(--gold);
+        color: var(--forest);
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        height: 50px;
+        margin-top: 38px;
+        text-align: center;
+        width: 100%;
+        transition: all 0.3s;
+      }
+
+      .submit:hover {
+        background: var(--champagne-light);
+        border-color: var(--champagne-light);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(201, 164, 92, 0.3);
+      }
+
+      .submit:disabled {
+        opacity: 0.65;
+        cursor: wait;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 600px) {
+        .page {
+          padding: 45px 20px;
+        }
+
+        .page h1 {
+          font-size: 3rem;
+        }
+
+        .page p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 30px;
+        }
+
+        .page small {
+          font-size: 0.75rem;
+          letter-spacing: 4px;
+        }
+
+        .open-form {
+          padding: 13px 25px;
+          font-size: 0.85rem;
+          letter-spacing: 1px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .form {
+          padding: 26px 18px 22px;
+        }
+
+        .page h1 {
+          font-size: 2.7rem;
+        }
+
+        .page p {
+          font-size: 1rem;
+        }
+      }
       /* ===================== PHOTO UPLOAD ===================== */
       .upload-section {
         background: var(--cream);
@@ -1055,13 +1121,13 @@
    envelope opening, wax seal, particles, parallax and reveal.
    ========================================================= */
       :root {
-        --paper: #f7f2e9;
-        --paper2: #eee5d7;
-        --ink: #2f3d35;
-        --sage: #718878;
-        --sage-dark: #40584a;
-        --champagne: #c6a56a;
-        --champagne-light: #e5cf9e;
+        --paper: #f7f5ef;
+        --paper2: #e8edf5;
+        --ink: #102746;
+        --sage: #18345b;
+        --sage-dark: #102746;
+        --champagne: #c9a45c;
+        --champagne-light: #ead8aa;
       }
       body.locked {
         overflow: hidden;
@@ -1674,6 +1740,557 @@
           opacity: 0;
         }
       }
+
+      /* ===================== NAVY & GOLD WEDDING THEME ===================== */
+      :root {
+        --sage: #18345b;
+        --sage-dark: #102746;
+        --sage-light: #e8edf5;
+        --cream: #f7f5ef;
+        --gold: #c9a45c;
+        --gold-dark: #9f7935;
+        --forest: #0b1d35;
+        --text: #263247;
+        --champagne: #c9a45c;
+        --champagne-light: #ead8aa;
+        --ink: #102746;
+      }
+
+      .hero {
+        background:
+          radial-gradient(
+            ellipse at 50% 42%,
+            rgba(36, 66, 108, 0.72),
+            transparent 52%
+          ),
+          linear-gradient(135deg, #07172b 0%, #102746 52%, #18345b 100%);
+      }
+      .hero::after {
+        content: "✦";
+        position: absolute;
+        bottom: 13%;
+        color: rgba(234, 216, 170, 0.75);
+        font-size: 1.2rem;
+        letter-spacing: 2rem;
+        text-shadow: 0 0 24px rgba(201, 164, 92, 0.65);
+      }
+      .hero .date::before,
+      .hero .date::after {
+        background: var(--gold);
+      }
+      .section-title small {
+        color: var(--gold-dark);
+      }
+      .section-title h2,
+      .couple-card h3,
+      .event-card h3,
+      .upload-card h3 {
+        color: var(--sage-dark);
+      }
+      .countdown-section {
+        background: linear-gradient(135deg, #e8edf5, #dce4ef);
+      }
+      .count-box {
+        border: 1px solid rgba(201, 164, 92, 0.45);
+        border-top: 3px solid var(--gold);
+      }
+      .count-box .num {
+        color: var(--sage-dark);
+      }
+      .count-box .label,
+      .couple-card .surname {
+        color: var(--sage);
+      }
+      .story-section {
+        background: linear-gradient(135deg, #f7f5ef, #e8edf5);
+      }
+      .timeline::before {
+        background: linear-gradient(var(--gold), var(--sage));
+      }
+      .timeline-item::before {
+        background: var(--gold);
+        box-shadow: 0 0 0 2px var(--sage);
+      }
+      .timeline-content {
+        border: 1px solid rgba(201, 164, 92, 0.25);
+      }
+      .quote-section {
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgba(31, 57, 91, 0.8),
+            transparent 65%
+          ),
+          linear-gradient(135deg, #07172b, #102746 55%, #0b1d35);
+      }
+      .quote-section::after {
+        color: var(--gold);
+      }
+      .style-section {
+        background: #f7f5ef;
+      }
+      .dress-list li {
+        border-bottom-color: rgba(16, 39, 70, 0.15);
+        color: #46546a;
+      }
+      .dress-list b {
+        color: var(--sage-dark);
+      }
+      .rsvp-section {
+        background: linear-gradient(135deg, #102746 0%, #07172b 100%);
+      }
+      .rsvp-btn.primary,
+      .submit-btn {
+        color: #102746;
+      }
+      .event-card,
+      .upload-card {
+        border: 1px solid rgba(201, 164, 92, 0.3);
+      }
+      .event-card::before {
+        background: linear-gradient(90deg, #102746, var(--gold));
+      }
+      .map-btn {
+        background: var(--sage);
+      }
+      .map-btn:hover {
+        background: #07172b;
+      }
+      footer {
+        background: #07172b;
+        border-top: 2px solid var(--gold);
+      }
+      .intro-gate {
+        background:
+          radial-gradient(
+            circle at 50% 42%,
+            rgba(39, 67, 105, 0.78) 0 8%,
+            transparent 48%
+          ),
+          linear-gradient(135deg, #07172b, #102746 48%, #18345b);
+        color: #f7f5ef;
+      }
+      .intro-gate::after {
+        background: radial-gradient(
+          ellipse at center,
+          transparent 28%,
+          rgba(3, 12, 25, 0.5) 100%
+        );
+      }
+      .intro-eyebrow,
+      .intro-title,
+      .open-label {
+        color: #f7f5ef;
+      }
+      .intro-subtitle,
+      .open-label .hint {
+        color: #e4d7b8;
+      }
+      .intro-title em {
+        color: var(--gold);
+      }
+      .envelope-back {
+        background: linear-gradient(145deg, #18345b, #0b1d35);
+        box-shadow: inset 0 0 0 1px rgba(201, 164, 92, 0.65);
+      }
+      .envelope-left,
+      .envelope-right,
+      .envelope-bottom {
+        background: #18345b;
+      }
+      .envelope-right {
+        background: #102746;
+      }
+      .envelope-bottom {
+        background: #0b1d35;
+      }
+      .envelope-flap {
+        background: linear-gradient(145deg, #24466f, #102746);
+      }
+      .invitation-card {
+        background: #f7f5ef;
+        border-color: rgba(201, 164, 92, 0.65);
+      }
+      .invitation-card::before {
+        border-color: rgba(159, 121, 53, 0.65);
+      }
+      .card-copy {
+        color: #102746;
+      }
+      .card-copy span {
+        color: #59677a;
+      }
+      .wax-seal {
+        background: radial-gradient(
+          circle at 35% 30%,
+          #e7cf91,
+          #b18a43 62%,
+          #76552a
+        );
+        color: #fffaf0;
+      }
+      .tap-ring {
+        border-color: rgba(201, 164, 92, 0.8);
+      }
+      .spark {
+        color: #ead8aa;
+      }
+
+      /* Couple monograms replace portrait photographs. */
+      .couple-monogram {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto 20px;
+        display: grid;
+        place-items: center;
+        position: relative;
+        border-radius: 50%;
+        color: var(--gold);
+        font:
+          400 6.5rem/1 "Great Vibes",
+          cursive;
+        background:
+          radial-gradient(circle, rgba(201, 164, 92, 0.09), transparent 65%),
+          linear-gradient(145deg, #102746, #07172b);
+        border: 2px solid var(--gold);
+        outline: 1px solid rgba(201, 164, 92, 0.45);
+        outline-offset: 8px;
+        box-shadow:
+          0 15px 40px rgba(7, 23, 43, 0.2),
+          inset 0 0 0 8px rgba(201, 164, 92, 0.08);
+      }
+      .couple-monogram::before,
+      .couple-monogram::after {
+        content: "✦";
+        position: absolute;
+        color: #ead8aa;
+        font:
+          1rem Montserrat,
+          sans-serif;
+      }
+      .couple-monogram::before {
+        top: 22px;
+      }
+      .couple-monogram::after {
+        bottom: 22px;
+      }
+
+      /* Photo carousel replaced with editorial keepsake panels. */
+      .gallery {
+        background: linear-gradient(180deg, #f7f5ef, #e8edf5);
+      }
+      .memory-panels {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .memory-panel {
+        min-height: 300px;
+        padding: 34px 25px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(150deg, #17365d, #091b33);
+        color: #f7f5ef;
+        border: 1px solid var(--gold);
+        outline: 1px solid rgba(201, 164, 92, 0.3);
+        outline-offset: -9px;
+        box-shadow: 0 16px 35px rgba(7, 23, 43, 0.14);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .memory-panel:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 40px rgba(7, 23, 43, 0.22);
+      }
+      .memory-ornament {
+        color: var(--gold);
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+      .memory-number {
+        color: #ead8aa;
+        font:
+          italic 1rem "Cormorant Garamond",
+          serif;
+        letter-spacing: 0.25em;
+      }
+      .memory-panel h3 {
+        color: #f2dfb4;
+        font:
+          400 2.2rem "Great Vibes",
+          cursive;
+        margin: 12px 0;
+      }
+      .memory-panel p {
+        max-width: 230px;
+        color: rgba(247, 245, 239, 0.88);
+        font-size: 1.15rem;
+        line-height: 1.55;
+      }
+      .memory-panel::before,
+      .memory-panel::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border: 1px solid rgba(201, 164, 92, 0.28);
+        border-radius: 50%;
+      }
+      .memory-panel::before {
+        top: -75px;
+        right: -55px;
+      }
+      .memory-panel::after {
+        bottom: -78px;
+        left: -55px;
+      }
+
+      /* Decorative invitation artwork instead of a photograph. */
+      .style-photo.style-ornament {
+        height: 580px;
+        display: grid;
+        place-items: center;
+        transform: rotate(-2deg);
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(201, 164, 92, 0.13),
+            transparent 48%
+          ),
+          linear-gradient(145deg, #17365d, #07172b);
+        border: 1px solid var(--gold);
+        outline: 1px solid rgba(201, 164, 92, 0.5);
+        outline-offset: -14px;
+      }
+      .ornament-frame {
+        width: 76%;
+        height: 82%;
+        border: 1px solid rgba(234, 216, 170, 0.8);
+        outline: 1px solid rgba(234, 216, 170, 0.35);
+        outline-offset: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ead8aa;
+        text-align: center;
+      }
+      .ornament-star {
+        font-size: 2.4rem;
+        color: var(--gold);
+      }
+      .ornament-initials {
+        font:
+          400 clamp(4rem, 7vw, 6rem)/1 "Great Vibes",
+          cursive;
+        margin: 25px 0;
+      }
+      .ornament-initials i {
+        color: var(--gold);
+        font-style: normal;
+        font-size: 0.65em;
+      }
+      .ornament-rule {
+        width: 70px;
+        height: 1px;
+        background: var(--gold);
+        margin-bottom: 18px;
+      }
+      .ornament-caption {
+        font:
+          500 0.72rem Montserrat,
+          sans-serif;
+        letter-spacing: 0.25em;
+      }
+      .ornament-flourish {
+        font-size: 3rem;
+        color: var(--gold);
+        margin-top: 28px;
+      }
+
+      .leaf {
+        color: var(--gold);
+      }
+      @media (max-width: 768px) {
+        .memory-panels {
+          grid-template-columns: 1fr;
+          max-width: 430px;
+        }
+        .memory-panel {
+          min-height: 250px;
+        }
+        .style-photo.style-ornament {
+          height: 420px;
+        }
+        .couple-monogram {
+          width: 190px;
+          height: 190px;
+        }
+      }
+
+      /* Indicador de contenido: flechas doradas hacia abajo */
+      .scroll-cue {
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        bottom: 22px;
+        transform: translateX(-50%);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        border: 1px solid rgba(214, 180, 112, 0.75);
+        border-radius: 50%;
+        background: rgba(8, 27, 55, 0.88);
+        color: #e2c17e;
+        box-shadow: 0 5px 22px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        opacity: 1;
+        visibility: visible;
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s ease,
+          background 0.25s ease;
+        animation: scrollCueFloat 1.6s ease-in-out infinite;
+      }
+      .scroll-cue:hover {
+        background: #17365f;
+      }
+      .scroll-cue svg {
+        width: 22px;
+        height: 15px;
+        margin: -2px 0;
+        overflow: visible;
+      }
+      .scroll-cue.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      @keyframes scrollCueFloat {
+        0%,
+        100% {
+          translate: 0 0;
+        }
+        50% {
+          translate: 0 6px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-cue {
+          animation: none;
+        }
+      }
+
+      /* Reproductor musical de la invitación */
+      .music-section {
+        padding: 76px 20px;
+        text-align: center;
+        color: #f7f5ef;
+        background:
+          radial-gradient(
+            circle at 50% 0%,
+            rgba(201, 164, 92, 0.18),
+            transparent 45%
+          ),
+          linear-gradient(135deg, #07172b, #102746 58%, #18345b);
+      }
+      .music-card {
+        width: min(620px, 100%);
+        margin: 0 auto;
+        padding: 34px 28px;
+        border: 1px solid rgba(201, 164, 92, 0.62);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.045);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      }
+      .music-card .music-kicker {
+        color: #e2c17e;
+        font:
+          500 0.7rem Montserrat,
+          sans-serif;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+      .music-card h2 {
+        margin: 12px 0 8px;
+        color: #f7f5ef;
+        font:
+          400 clamp(2rem, 5vw, 3rem) "Great Vibes",
+          cursive;
+      }
+      .music-card p {
+        color: rgba(247, 245, 239, 0.78);
+        font-size: 1.15rem;
+      }
+      .music-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        margin: 24px 0 20px;
+      }
+      .music-controls button {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #c9a45c;
+        border-radius: 50%;
+        background: transparent;
+        color: #e2c17e;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.25s ease;
+      }
+      .music-controls button.main {
+        width: 60px;
+        height: 60px;
+        background: #c9a45c;
+        color: #102746;
+        font-size: 1.2rem;
+      }
+      .music-controls button:hover {
+        transform: translateY(-2px);
+        background: #e2c17e;
+        color: #102746;
+      }
+      .music-progress {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .music-progress span {
+        min-width: 38px;
+        color: rgba(247, 245, 239, 0.8);
+        font:
+          500 0.68rem Montserrat,
+          sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      .music-progress input {
+        width: 100%;
+        accent-color: #c9a45c;
+        cursor: pointer;
+      }
+      #musicHint {
+        margin-top: 14px;
+        color: #e2c17e;
+        font:
+          0.72rem Montserrat,
+          sans-serif;
+      }
     </style>
   </head>
   <body>
@@ -1688,7 +2305,7 @@
       <div class="sparkle-field" id="sparkleField"></div>
       <div class="intro-content">
         <div class="intro-eyebrow">Una historia para celebrar</div>
-        <h1 class="intro-title">Fyodor<em>&amp;</em> Coraline</h1>
+        <h1 class="intro-title">Muricio<em>&amp;</em> Fabiola</h1>
         <p class="intro-subtitle">El comienzo de nuestro para siempre</p>
 
         <div
@@ -1704,8 +2321,8 @@
             <div class="invitation-card">
               <div class="card-copy">
                 <div class="mini">Nuestra boda</div>
-                <strong>Fyodor &amp; Coraline</strong>
-                <span>20 · Agosto · 2027</span>
+                <strong>Muricio &amp; Fabiola</strong>
+                <span>12 · DICIEMBRE · 2026</span>
               </div>
             </div>
             <div class="envelope-left"></div>
@@ -1728,17 +2345,71 @@
       <div class="hero-content">
         <small>Estamos por casarnos</small>
         <h1>
-          Fyodor
+          Mauricio
           <span class="amp">&amp;</span>
-          Coraline
+          Fabiola
         </h1>
-        <div class="date">20 · AGOSTO · 2027</div>
+        <div class="date">12 · DICIEMBRE · 2026</div>
       </div>
       <a href="#countdown" class="scroll-down"
         ><i class="fas fa-chevron-down"></i
       ></a>
     </section>
-
+    <!-- ============ MÚSICA DE LA INVITACIÓN ============ -->
+    <section class="music-section" id="musica">
+      <div class="music-card">
+        <div class="music-kicker">Una melodía para este momento</div>
+        <h2>Nuestra canción</h2>
+        <p>
+          Acompáñanos con esta canción mientras celebramos nuestra historia.
+        </p>
+        <audio id="weddingAudio" preload="metadata">
+          <source src="cancion.mp3" type="audio/mpeg" />
+          Tu navegador no puede reproducir audio.
+        </audio>
+        <div class="music-controls">
+          <button
+            type="button"
+            id="restartMusic"
+            aria-label="Volver a reproducir"
+            title="Volver a reproducir"
+          >
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+          <button
+            type="button"
+            class="main"
+            id="toggleMusic"
+            aria-label="Reproducir canción"
+            title="Reproducir / pausar"
+          >
+            <i class="fa-solid fa-play" id="musicPlayIcon"></i>
+          </button>
+          <button
+            type="button"
+            id="forwardMusic"
+            aria-label="Adelantar 10 segundos"
+            title="Adelantar 10 segundos"
+          >
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+        </div>
+        <div class="music-progress">
+          <span id="musicCurrent">0:00</span>
+          <input
+            id="musicSeek"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            aria-label="Posición de la canción"
+          />
+          <span id="musicDuration">0:00</span>
+        </div>
+        <div id="musicHint"></div>
+      </div>
+    </section>
     <!-- ============ COUNTDOWN ============ -->
     <section class="countdown-section" id="countdown">
       <div class="container">
@@ -1767,81 +2438,45 @@
         </div>
       </div>
     </section>
-
-    <!-- ============ COUPLE ============ -->
+    <!-- ============ EVENTS ============ -->
     <section>
       <div class="container">
         <div class="section-title reveal">
-          <small>El amor nos une</small>
-          <h2>Los Novios</h2>
+          <small>El gran día</small>
+          <h2>Ceremonia &amp; Recepción</h2>
+          <small>12 de diciembre 2026</small>
           <div class="divider"></div>
         </div>
-        <div class="couple-grid">
-          <div class="couple-card reveal">
-            <img src="Imagenes/Fyodor.png" alt="Fyodor" />
-            <h3>Fyodor</h3>
-            <div class="surname">Montecinos</div>
-            <p>
-              Siempre he sido un apasionado de la música y la naturaleza, el
-              alma de la fiesta, listo para convertir cualquier momento en un
-              recuerdo inolvidable. La aventura me ha llevado a lugares
-              maravillosos, pero ninguno se comparó con el momento en que conocí
-              a Coraline.
+        <div class="events-grid">
+          <div class="event-card reveal">
+            <div class="event-icon"><i class="fas fa-church"></i></div>
+            <h3>Ceremonia Religiosa</h3>
+            <div class="time">13:45 PM - 15:00 PM</div>
+            <p class="address">
+              Parroquia María Reyna<br />Z. Tembladerani Av. Jaimes Freyre
+              N.1879
             </p>
+            <a href="https://maps.app.goo.gl/DxdsPqqLY5eRHhgu7" class="map-btn"
+              ><i class="fas fa-map-marker-alt"></i> Ver en el mapa</a
+            >
           </div>
-          <div class="heart-between reveal"><i class="fas fa-heart"></i></div>
-          <div class="couple-card reveal">
-            <img src="Imagenes/Coraline.png" alt="Coraline" />
-            <h3>Coraline</h3>
-            <div class="surname">Miranda</div>
-            <p>
-              Siempre he llevado color y arte a la vida de quienes me rodean.
-              Cada detalle para mí es una oportunidad de crear algo hermoso, y
-              espero construir algo hermoso con Fyodor.
+          <div class="event-card reveal">
+            <div class="event-icon">
+              <i class="fas fa-champagne-glasses"></i>
+            </div>
+            <h3>Recepción Social</h3>
+            <div class="time">17:00 PM - 00:00 PM</div>
+            <p class="address">
+              Salón Rey Salomón<br />Z. Tembladerani Calle Adrián Patiño, esq.
+              Av Landaeta
             </p>
+            <a href="https://maps.app.goo.gl/bTdickBsyPkmEKvY8" class="map-btn"
+              ><i class="fas fa-map-marker-alt"></i> Ver en el mapa</a
+            >
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ============ CAROUSEL ============ -->
-    <section class="gallery">
-      <div class="container">
-        <div class="section-title fade-in">
-          <h2>Momentos Preciosos</h2>
-          <span class="script">Recuerdos</span>
-        </div>
-        <div class="carousel-wrapper">
-          <div class="carousel" id="carousel">
-            <div class="carousel-slide">
-              <img src="Imagenes/BaileSal.png" alt="" />
-              <div class="caption">Nuestro primer baile</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="Imagenes/iglesia.png" alt="" />
-              <div class="caption">Atardeceres juntos</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="Imagenes/iglesia2.png" alt="" />
-              <div class="caption">La propuesta</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="Imagenes/frente.png" alt="" />
-              <div class="caption">Momentos felices</div>
-            </div>
-            <div class="carousel-slide">
-              <img src="Imagenes/salar.png" alt="" />
-              <div class="caption">Aventuras</div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn" onclick="moveCarousel(-1)">‹</button>
-          <button class="carousel-btn" onclick="moveCarousel(1)">›</button>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ STORY ============ -->
     <section class="story-section">
       <div class="container">
@@ -1850,111 +2485,285 @@
           <h2>Acompáñanos en cada momento de esta celebración.</h2>
           <div class="divider"></div>
         </div>
+
         <div class="timeline">
           <div class="timeline-item reveal">
             <div class="timeline-content">
-              <span class="year">03:00 PM</span>
-              <h4>Ceremonia</h4>
+              <span class="year">13:45 hrs.</span>
+              <h4>Ceremonia Religiosa</h4>
               <p>
-                El momento en que diremos nuestro “sí, acepto” rodeados de
-                quienes amamos.
+                El momento en que uniremos nuestras vidas ante Dios, rodeados
+                del cariño y las bendiciones de quienes amamos.
               </p>
             </div>
           </div>
+
           <div class="timeline-item reveal">
             <div class="timeline-content">
-              <span class="year">04:30 PM</span>
-              <h4>Cóctel</h4>
-              <p>Un brindis, música y tiempo para compartir juntos.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-content">
-              <span class="year">05:30 PM</span>
-              <h4>Recepción</h4>
+              <span class="year">15:00 hrs.</span>
+              <h4>Paseo Nupcial</h4>
               <p>
-                Cena, conversaciones y todos los recuerdos que comenzaremos a
-                crear.
+                Un recorrido especial para compartir nuestra alegría y celebrar
+                juntos el comienzo de esta nueva etapa.
               </p>
             </div>
           </div>
+
           <div class="timeline-item reveal">
             <div class="timeline-content">
-              <span class="year">07:00 PM</span>
-              <h4>Primer baile</h4>
+              <span class="year">17:00 hrs.</span>
+              <h4>Boda Civil</h4>
               <p>
-                Una canción, dos personas y un instante que queremos guardar
-                para siempre.
+                Frente a nuestros seres queridos, formalizaremos nuestra unión y
+                celebraremos el compromiso de compartir la vida.
               </p>
             </div>
           </div>
+
           <div class="timeline-item reveal">
             <div class="timeline-content">
-              <span class="year">08:00 PM</span>
-              <h4>La fiesta</h4>
-              <p>Ahora sí: ¡a celebrar, bailar y disfrutar!</p>
+              <span class="year">17:30 hrs.</span>
+              <h4>Vals y Brindis</h4>
+              <p>
+                Un momento lleno de emoción para compartir nuestro primer baile
+                y levantar las copas por el amor y la felicidad.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="year">18:30 hrs.</span>
+              <h4>Empieza la Fiesta</h4>
+              <p>
+                ¡Que comience la celebración! Música, alegría y momentos
+                inolvidables para disfrutar todos juntos.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="year">20:00 hrs.</span>
+              <h4>Cena</h4>
+              <p>
+                Compartiremos una deliciosa cena, acompañada de buenas
+                conversaciones y la alegría de estar juntos.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="year">22:20 hrs.</span>
+              <h4>La Torta</h4>
+              <p>
+                Un dulce momento para compartir, celebrar nuestro amor y guardar
+                otro hermoso recuerdo de este día.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="year">22:30 hrs.</span>
+              <h4>Lanzamiento del Bouquet</h4>
+              <p>
+                ¡Un momento de diversión y emoción! ¿Quién será la próxima
+                persona en recibir una sorpresa del amor?
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-content">
+              <span class="year">00:00 hrs.</span>
+              <h4>Despedida</h4>
+              <p>
+                Llegará el momento de despedirnos, agradeciéndoles de corazón
+                por acompañarnos y ser parte de una historia que recordaremos
+                siempre.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ EVENTS ============ -->
-    <section>
+    <!-- ============ RSVP ============ -->
+    <section class="rsvp-section">
       <div class="container">
-        <div class="section-title reveal">
-          <small>El gran día</small>
-          <h2>Ceremonia &amp; Recepción</h2>
-          <small>20 de agosto 2027</small>
-          <div class="divider"></div>
-        </div>
-        <div class="events-grid">
-          <div class="event-card reveal">
-            <div class="event-icon"><i class="fas fa-church"></i></div>
-            <h3>Ceremonia</h3>
-            <div class="time">03:00 PM - 04:30 PM</div>
-            <p class="address">
-              Iglesia de Santa Clara<br />Plaza Mayor, Ciudad Jardín
-            </p>
-            <a href="https://maps.app.goo.gl/UN27urD3ziDxtqna6" class="map-btn"
-              ><i class="fas fa-map-marker-alt"></i> Ver en el mapa</a
-            >
+        <main class="page">
+          <div class="section-title reveal">
+            <small>Esperamos tu respuesta</small>
+            <h2>Confirma tu Asistencia</h2>
+            <div class="divider"></div>
           </div>
-          <div class="event-card reveal">
-            <div class="event-icon">
-              <i class="fas fa-champagne-glasses"></i>
-            </div>
-            <h3>Recepción</h3>
-            <div class="time">05:30 PM - 6:00 PM</div>
-            <p class="address">
-              Jardines de Eucalipto<br />Camino Real 45, Valle Verde
-            </p>
-            <a href="https://maps.app.goo.gl/BtnvQHiMXPGk4oxU9" class="map-btn"
-              ><i class="fas fa-map-marker-alt"></i> Ver en el mapa</a
-            >
+          <p class="rsvp-intro reveal">
+            Tu presencia es el mejor regalo que podemos recibir. Por favor
+            confirma tu asistencia antes del
+            <strong>5 de diciembre de 2026</strong>. Cada detalle cuenta para
+            nosotros.
+          </p>
+          <p>Presiona el botón para completar el formulario.</p>
+          <div class="rsvp-buttons reveal">
+            <button type="button" class="open-form secondary" id="openForm">
+              <i class="fas fa-external-link"></i> Completar Formulario
+            </button>
           </div>
-          <div class="event-card reveal">
-            <div class="event-icon"><i class="fas fa-utensils"></i></div>
-            <h3>Cena &amp; Fiesta</h3>
-            <div class="time">08:00 PM - 22:00 PM</div>
-            <p class="address">
-              Salón del Gran Roble<br />Dentro del mismo jardín
-            </p>
-            <a href="https://maps.app.goo.gl/XE7NJ5HcVhyS2M8MA" class="map-btn"
-              ><i class="fas fa-map-marker-alt"></i> Ver en el mapa</a
+        </main>
+
+        <div class="modal-overlay" id="formModal" aria-hidden="true">
+          <section
+            class="form"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="formTitle"
+          >
+            <button
+              type="button"
+              class="close-modal"
+              id="closeForm"
+              aria-label="Cerrar formulario"
             >
-          </div>
+              &times;
+            </button>
+            <h2 class="title" id="formTitle">Confirma tu asistencia</h2>
+            <h3 class="subtitle">
+              Tu presencia hará aún más especial este día. Por favor, cuéntanos
+              si podremos celebrar juntos.
+            </h3>
+            <form name="contact-form" method="post">
+              <div class="input-container ic1">
+                <input
+                  name="Nombre"
+                  id="firstname"
+                  class="input"
+                  type="text"
+                  placeholder=" "
+                  required
+                />
+                <div class="cut"></div>
+                <label for="firstname" class="placeholder"
+                  >Nombre completo</label
+                >
+              </div>
+              <div class="input-container ic2">
+                <label
+                  class="placeholder"
+                  style="position: static; display: block; margin-bottom: 15px"
+                >
+                  ¿Asistirás?
+                </label>
+
+                <div class="radio-group">
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      name="Asistencia"
+                      id="asistire"
+                      value="Sí, asistiré"
+                      required
+                    />
+                    <label class="radios" for="asistire">Sí, asistiré</label>
+                  </div>
+
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      name="Asistencia"
+                      id="noAsistire"
+                      value="No podré asistir"
+                      required
+                    />
+                    <label class="radios" for="noAsistire"
+                      >No podré asistir</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="input-container ic2">
+                <label
+                  class="placeholder"
+                  style="position: static; display: block; margin-bottom: 15px"
+                  >Número de acompañantes</label
+                >
+
+                <div class="radio-group">
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      name="Acompanantes"
+                      id="solo"
+                      value="Iré solo/a"
+                      required
+                    />
+                    <label class="radios" for="solo">Iré solo/a</label>
+                  </div>
+
+                  <div class="radio-option">
+                    <input
+                      type="radio"
+                      name="Acompanantes"
+                      id="unAcompanante"
+                      value="1 acompañante"
+                      required
+                    />
+                    <label class="radios" for="unAcompanante"
+                      >1 acompañante</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="fechaEnvio" id="fechaEnvio" />
+              <button type="submit" class="submit">Enviar</button>
+            </form>
+          </section>
         </div>
       </div>
     </section>
+    <!-- ============ LOVE NOTE / NO PHOTO GALLERY ============-->
+    <section class="gallery">
+      <div class="container">
+        <div class="section-title reveal">
+          <small>Un nuevo capítulo comienza</small>
+          <h2>Una historia escrita por dos</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="memory-panels">
+          <article class="memory-panel reveal">
+            <span class="memory-ornament">✦</span>
+            <span class="memory-number">I</span>
+            <h3>Dos caminos</h3>
+            <p>Dos historias distintas que encontraron un mismo destino.</p>
+          </article>
+          <article class="memory-panel reveal">
+            <span class="memory-ornament">❦</span>
+            <span class="memory-number">II</span>
+            <h3>Un solo corazón</h3>
+            <p>
+              Un amor que crece en los pequeños momentos y en los grandes
+              sueños.
+            </p>
+          </article>
+          <article class="memory-panel reveal">
+            <span class="memory-ornament">✧</span>
+            <span class="memory-number">III</span>
+            <h3>Para siempre</h3>
+            <p>Hoy comienza el viaje más bonito: compartir la vida, juntos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Quote -->
     <section class="quote-section">
       <div class="reveal-scale">
         <div class="quote">
-          “El amor no consiste en mirarse el uno al otro, sino en mirar juntos
-          en la misma dirección.”
+          “Hoy celebramos el amor que nos une y el futuro que soñamos construir”
         </div>
-        <div class="quote-author">Nuestra historia · Fyodor & Coraline</div>
+        <div class="quote-author">Nuestra historia · Mauricio & Fabiola</div>
       </div>
     </section>
 
@@ -1967,8 +2776,17 @@
           <div class="divider"></div>
         </div>
         <div class="style-grid">
-          <div class="style-photo reveal-left">
-            <img src="Imagenes/baile.png" alt="Detalles de boda" />
+          <div
+            class="style-photo style-ornament reveal-left"
+            aria-label="Ornamento decorativo de la invitación"
+          >
+            <div class="ornament-frame">
+              <span class="ornament-star">✦</span>
+              <span class="ornament-initials">F <i>&amp;</i> C</span>
+              <span class="ornament-rule"></span>
+              <span class="ornament-caption">12 · XII · MMXXVI</span>
+              <span class="ornament-flourish">❦</span>
+            </div>
           </div>
           <div class="style-copy reveal-right">
             <h3>Elegante</h3>
@@ -1980,35 +2798,11 @@
               <li><b>Ellas</b><span>Vestido de cóctel o formal.</span></li>
               <li><b>Ellos</b><span>Traje o conjunto formal.</span></li>
             </ul>
+            <p class="dressed-reserved">
+              <span>✦</span>
+              El color blanco está reservado exclusivamente para la novia.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ RSVP ============ -->
-    <section class="rsvp-section">
-      <div class="container">
-        <div class="section-title reveal">
-          <small>Esperamos tu respuesta</small>
-          <h2>Confirma tu Asistencia</h2>
-          <div class="divider"></div>
-        </div>
-        <p class="rsvp-intro reveal">
-          Tu presencia es el mejor regalo que podemos recibir. Por favor
-          confirma tu asistencia antes del <strong>1 de julio de 2027</strong>.
-          Cada detalle cuenta para nosotros.
-        </p>
-        <div class="rsvp-buttons reveal">
-          <button
-            class="rsvp-btn secondary"
-            onclick="
-              window.open(
-                'https://docs.google.com/forms/d/e/1FAIpQLSf0BICp2qlmfpfS6W6yLUMhCRFgaBbCTEIc6g4rQa41HufWJw/viewform?usp=header',
-              )
-            "
-          >
-            <i class="fas fa-external-link"></i> Completar Formulario
-          </button>
         </div>
       </div>
     </section>
@@ -2030,7 +2824,7 @@
             este día inolvidable.
           </p>
           <a
-            href="https://drive.google.com/drive/folders/1CR0i6GzUOnmxjaF5euWSNIP9UzkvrCc2?usp=sharing"
+            href="https://drive.google.com/drive/folders/1_-Thh1oziUnsrrsJYrO_FTRapELGIDZ-?usp=sharing"
             target="_blank"
             class="upload-btn"
           >
@@ -2041,9 +2835,10 @@
     </section>
 
     <!-- ============ FOOTER ============ -->
+
     <footer>
-      <div class="names">Fyodor &amp; Coraline</div>
-      <div class="date-footer">20 · AGOSTO · 2027</div>
+      <div class="names">Mauricio &amp; Fabiola</div>
+      <div class="date-footer">12 · DICIEMBRE · 2026</div>
       <p
         style="
           font-family: &quot;Great Vibes&quot;, cursive;
@@ -2057,7 +2852,7 @@
 
     <script>
       /* ========== COUNTDOWN ========== */
-      const weddingDate = new Date("Aug 20, 2027 15:00:00").getTime();
+      const weddingDate = new Date("Dec 12, 2026 13:45:00").getTime();
       function updateCountdown() {
         const now = new Date().getTime();
         const diff = weddingDate - now;
@@ -2101,62 +2896,11 @@
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
 
-      /* ========== CAROUSEL ========== */
-
-      let currentIndex = 0;
-      const slides = document.querySelectorAll(".carousel-slide");
-      const totalSlides = slides.length;
-
-      function updateCarousel() {
-        slides.forEach((slide, i) => {
-          let offset = i - currentIndex;
-          if (offset < -1) offset += totalSlides;
-          if (offset > 1) offset -= totalSlides;
-          if (offset === -1)
-            slide.style.transform = `translate(-50%, -50%) translateX(-350px) scale(0.8)`;
-          else if (offset === 0)
-            slide.style.transform = `translate(-50%, -50%) translateX(0) scale(1)`;
-          else if (offset === 1)
-            slide.style.transform = `translate(-50%, -50%) translateX(350px) scale(0.8)`;
-          else slide.style.transform = `translate(-50%, -50%) scale(0)`;
-          slide.style.opacity =
-            offset === 0 ? "1" : Math.abs(offset) === 1 ? "0.5" : "0";
-          slide.style.zIndex = offset === 0 ? 3 : 1;
-        });
-      }
-      function moveCarousel(dir) {
-        currentIndex = (currentIndex + dir + totalSlides) % totalSlides;
-        updateCarousel();
-      }
-      updateCarousel();
-      setInterval(() => moveCarousel(1), 4000);
-
-      /* ========== RSVP FORM ========== */
-      function toggleForm() {
-        const form = document.getElementById("rsvpForm");
-        form.classList.toggle("open");
-        if (form.classList.contains("open")) {
-          setTimeout(
-            () => form.scrollIntoView({ behavior: "smooth", block: "center" }),
-            400,
-          );
-        }
-      }
-      function submitForm(e) {
-        e.preventDefault();
-        // Aquí podrías enviar a tu backend o Google Forms
-        document.getElementById("formMessage").classList.add("success");
-        document.getElementById("rsvpForm").reset();
-        setTimeout(() => {
-          document.getElementById("rsvpForm").classList.remove("open");
-        }, 3000);
-      }
-
       /* ========== FALLING LEAVES ========== */
       function createLeaf() {
         const leaf = document.createElement("div");
         leaf.className = "leaf";
-        leaf.innerHTML = "🌿";
+        leaf.innerHTML = "✦";
         leaf.style.left = Math.random() * 100 + "vw";
         leaf.style.fontSize = Math.random() * 15 + 15 + "px";
         leaf.style.animationDuration = Math.random() * 5 + 8 + "s";
@@ -2208,6 +2952,20 @@
         function openInvitation() {
           if (opened) return;
           opened = true;
+          // La apertura del sobre es una interacción del usuario: aquí se intenta
+          // iniciar la música respetando las restricciones de reproducción del navegador.
+          const weddingAudio = document.getElementById("weddingAudio");
+          if (weddingAudio) {
+            weddingAudio
+              .play()
+              .then(() => updateMusicControls())
+              .catch(() => {
+                const musicHint = document.getElementById("musicHint");
+                if (musicHint)
+                  musicHint.textContent =
+                    "Pulsa reproducir para escuchar la canción";
+              });
+          }
           gate.classList.add("opening");
           document.body.classList.remove("locked");
           document.body.classList.add("opening");
@@ -2242,5 +3000,230 @@
         });
       })();
     </script>
+
+    <button
+      class="scroll-cue"
+      id="scrollCue"
+      type="button"
+      aria-label="Desplazarse hacia abajo para ver más contenido"
+      title="Desliza para ver más"
+    >
+      <svg viewBox="0 0 24 16" aria-hidden="true">
+        <path
+          d="M3 2.5 12 10.5 21 2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <svg viewBox="0 0 24 16" aria-hidden="true">
+        <path
+          d="M3 2.5 12 10.5 21 2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <script>
+      (() => {
+        const cue = document.getElementById("scrollCue");
+        if (!cue) return;
+        const updateCue = () => {
+          const doc = document.documentElement;
+          const atBottom =
+            window.scrollY + window.innerHeight >= doc.scrollHeight - 12;
+          cue.classList.toggle(
+            "is-hidden",
+            atBottom || doc.scrollHeight <= window.innerHeight + 12,
+          );
+        };
+        cue.addEventListener("click", () => {
+          window.scrollBy({
+            top: Math.max(window.innerHeight * 0.72, 420),
+            behavior: "smooth",
+          });
+        });
+        window.addEventListener("scroll", updateCue, { passive: true });
+        window.addEventListener("resize", updateCue);
+        updateCue();
+      })();
+    </script>
+
+    <script>
+      /* Controles del reproductor musical */
+      const weddingAudio = document.getElementById("weddingAudio");
+      const toggleMusic = document.getElementById("toggleMusic");
+      const restartMusic = document.getElementById("restartMusic");
+      const forwardMusic = document.getElementById("forwardMusic");
+      const musicPlayIcon = document.getElementById("musicPlayIcon");
+      const musicSeek = document.getElementById("musicSeek");
+      const musicCurrent = document.getElementById("musicCurrent");
+      const musicDuration = document.getElementById("musicDuration");
+      const musicHint = document.getElementById("musicHint");
+
+      function formatMusicTime(seconds) {
+        if (!Number.isFinite(seconds)) return "0:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, "0");
+        return `${mins}:${secs}`;
+      }
+      function updateMusicControls() {
+        if (!weddingAudio) return;
+        const playing = !weddingAudio.paused;
+        musicPlayIcon.className = playing
+          ? "fa-solid fa-pause"
+          : "fa-solid fa-play";
+        toggleMusic.setAttribute(
+          "aria-label",
+          playing ? "Pausar canción" : "Reproducir canción",
+        );
+        musicCurrent.textContent = formatMusicTime(weddingAudio.currentTime);
+        musicDuration.textContent = formatMusicTime(weddingAudio.duration);
+        if (
+          Number.isFinite(weddingAudio.duration) &&
+          weddingAudio.duration > 0
+        ) {
+          musicSeek.value =
+            (weddingAudio.currentTime / weddingAudio.duration) * 100;
+        }
+      }
+      toggleMusic.addEventListener("click", () => {
+        if (weddingAudio.paused) {
+          weddingAudio
+            .play()
+            .then(() => {
+              musicHint.textContent = "Reproduciendo nuestra canción";
+              updateMusicControls();
+            })
+            .catch(() => {
+              musicHint.textContent =
+                "No se pudo cargar la canción. Verifica el archivo de audio.";
+            });
+        } else {
+          weddingAudio.pause();
+          musicHint.textContent = "Canción en pausa";
+          updateMusicControls();
+        }
+      });
+      restartMusic.addEventListener("click", () => {
+        weddingAudio.currentTime = 0;
+        weddingAudio
+          .play()
+          .then(() => {
+            musicHint.textContent = "Reproduciendo desde el inicio";
+            updateMusicControls();
+          })
+          .catch(() => {
+            musicHint.textContent =
+              "No se pudo cargar la canción. Verifica el archivo de audio.";
+          });
+      });
+      forwardMusic.addEventListener("click", () => {
+        if (Number.isFinite(weddingAudio.duration)) {
+          weddingAudio.currentTime = Math.min(
+            weddingAudio.currentTime + 10,
+            weddingAudio.duration,
+          );
+          updateMusicControls();
+        }
+      });
+      musicSeek.addEventListener("input", () => {
+        if (Number.isFinite(weddingAudio.duration)) {
+          weddingAudio.currentTime =
+            (Number(musicSeek.value) / 100) * weddingAudio.duration;
+          updateMusicControls();
+        }
+      });
+      ["loadedmetadata", "timeupdate", "play", "pause", "ended"].forEach(
+        (eventName) => {
+          weddingAudio.addEventListener(eventName, updateMusicControls);
+        },
+      );
+    </script>
+
+    <script>
+      /* ========== RSVP MODAL PERSONALIZADO ========== */
+      const scriptUrl =
+        "https://script.google.com/macros/s/AKfycbz13cL5w9mrHc1fqLgSh0S0pRi6UYCYSar_1qZJkf0euUB0hhEJNr2SQVkDzb7MPVNl/exec";
+      const modal = document.getElementById("formModal");
+      const form = document.forms["contact-form"];
+
+      function openModal() {
+        modal.classList.add("is-visible");
+        modal.setAttribute("aria-hidden", "false");
+        document.getElementById("firstname").focus();
+      }
+      function closeModal() {
+        modal.classList.remove("is-visible");
+        modal.setAttribute("aria-hidden", "true");
+      }
+      document.getElementById("openForm").addEventListener("click", openModal);
+      document
+        .getElementById("closeForm")
+        .addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-visible"))
+          closeModal();
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const button = form.querySelector(".submit");
+        button.disabled = true;
+        button.textContent = "Enviando...";
+        try {
+          const datosFormulario = new FormData(form);
+
+          // Agrega la fecha y hora exactas del envío, en formato ISO (UTC)
+          const fechaRegistro = new Date().toLocaleString("es-BO", {
+            timeZone: "America/La_Paz",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false,
+          });
+
+          datosFormulario.append("fechaRegistro", fechaRegistro);
+
+          await fetch(scriptUrl, {
+            method: "POST",
+            body: datosFormulario,
+          });
+          await Swal.fire({
+            title: "¡MUCHAS GRACIAS!",
+            text: "Formulario enviado",
+            icon: "success",
+            confirmButtonColor: "#a517d9",
+          });
+          form.reset();
+          closeModal();
+        } catch (error) {
+          console.error("Error al enviar el formulario:", error);
+          Swal.fire({
+            title: "No se pudo enviar",
+            text: "Ocurrió un problema al enviar el formulario. Inténtalo nuevamente.",
+            icon: "error",
+            confirmButtonColor: "#a517d9",
+          });
+        } finally {
+          button.disabled = false;
+          button.textContent = "Enviar";
+        }
+      });
+    </script>
   </body>
 </html>
+
